@@ -4,13 +4,20 @@ syntax on
 " Make tabs four spaces wide
 set tabstop=4
 set expandtab
+set shiftround
 
 " save a keypress: map semi-colon to colon
+" Always set autoindenting on
+set autoindent
+
 map ; :
 noremap ;; ;
 
 " Enable line numbers
 set number
+
+" Don't wrap lines
+set nowrap
 
 " Always show status line
 "set laststatus=2
@@ -23,3 +30,6 @@ set scrolloff=3
 
 " Don’t show the intro message when starting Vim
 set shortmess=atI
+
+" Show matching parenthesis
+set showmatch
