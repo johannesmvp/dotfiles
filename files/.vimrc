@@ -6,10 +6,10 @@ set tabstop=4
 set expandtab
 set shiftround
 
-" save a keypress: map semi-colon to colon
 " Always set autoindenting on
 set autoindent
 
+" Save a keypress: map semi-colon to colon
 map ; :
 noremap ;; ;
 
