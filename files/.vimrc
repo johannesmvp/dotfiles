@@ -15,9 +15,6 @@ set number
 " Always show status line
 "set laststatus=2
 
-" Show the filename in the window titlebar
-set title
-
 " Show the cursor position
 set ruler
 
