@@ -1,0 +1,45 @@
+# Easier navigation: .., ..., ...., .....
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# List all files
+alias ll='ls -laF'
+
+# List only directories
+alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
+
+# Sudo stuff
+alias 'apt-get'="echo;sudo apt-get"
+alias 'iptables'="echo;sudo iptables"
+alias 'ifconfig'='sudo ifconfig'
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
+# Apt-get
+alias canhaz='echo;sudo apt-get install'
+alias uppy='echo "sudo apt-get update && sudo apt-get upgrade"
+
+# OS X has no `md5sum`, so use `md5` as a fallback
+command -v md5sum > /dev/null || alias md5sum="md5"
+
+# OS X has no `sha1sum`, so use `shasum` as a fallback
+command -v sha1sum > /dev/null || alias sha1sum="shasum"
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+
+# Ring the terminal bell, and put a badge on Terminal.app’s Dock icon
+# (useful when executing time-consuming commands)
+alias badge="tput bel"
+
+# One of @janmoesen’s ProTip™s
+for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+alias "$method"="lwp-request -m '$method'"
+done
+
+# Stuff I never really use but cannot delete either because of http://xkcd.com/530/
+alias stfu="osascript -e 'set volume output muted true'"
+alias pumpitup="osascript -e 'set volume 7'"
