@@ -5,7 +5,9 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 # List all files
-alias ll='ls -laF'
+alias l='ls -alFh'
+alias ll='ls -alFh'
+alias ls='ls -F'
 
 # List only directories
 alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
@@ -48,5 +50,9 @@ alias pumpitup="osascript -e 'set volume 7'"
 alias g="git"
 alias gst="git status"
 alias gmit="git commit -m"
+alias gamit="git commit -a -m"
+alias gadd="git add"
+alias gpull="git pull"
+alias gpush="git push"
 alias gbr="git branch"
 alias gco="git checkout"
