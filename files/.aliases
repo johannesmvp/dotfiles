@@ -4,6 +4,26 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
+# Combine cd and ls
+alias cdl='cl'
+cl() {
+    dir=$1
+    if [[ -z "$dir" ]]; then
+        dir=$HOME
+    fi
+    if [[ -d "$dir" ]]; then
+        cd "$dir"
+        ls
+    else
+        if [[ "$dir" == \- ]]; then
+            cd -
+            ls
+        else
+            echo "bash: $0: '$dir': Directory not found"
+        fi
+    fi
+}
+
 # List all files
 alias l='ls -alFh'
 alias ll='ls -alFh'
