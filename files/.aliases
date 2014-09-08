@@ -45,6 +45,7 @@ alias sudo='sudo '
 
 # Apt-get
 alias canhaz='echo;sudo apt-get install'
+alias icanhaz='echo;sudo apt-get update && sudo apt-get install'
 alias uppy='echo "sudo apt-get update && sudo apt-get upgrade"'
 
 # OS X has no `md5sum`, so use `md5` as a fallback
