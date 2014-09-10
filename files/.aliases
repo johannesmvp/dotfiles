@@ -107,3 +107,6 @@ alias gco="git checkout"
 # Frequent typo's
 alias brwe="brew"
 
+# ip address
+alias myip='curl ip.frostia.net'
+
