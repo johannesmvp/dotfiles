@@ -86,3 +86,7 @@ alias gpull="git pull"
 alias gpush="git push"
 alias gbr="git branch"
 alias gco="git checkout"
+
+# Frequent typo's
+alias brwe="brew"
+
