@@ -112,3 +112,6 @@ alias brwe="brew"
 
 # ip address
 alias myip='curl ip.frostia.net'
+
+# identify and search for active network connections
+spy () { lsof -i -P +c 0 +M | grep -i "$1" }
