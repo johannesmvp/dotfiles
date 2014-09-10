@@ -1,0 +1,24 @@
+# Editor generated backup files #
+#################################
+*~
+*.swp
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Directories potentially created on network shares #
+#####################################################
+$RECYCLE.BIN/
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
