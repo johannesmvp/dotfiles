@@ -112,4 +112,3 @@ alias brwe="brew"
 
 # ip address
 alias myip='curl ip.frostia.net'
-
