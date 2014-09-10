@@ -4,6 +4,9 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
+# Combine cd and cd
+alias cdcd='cd;cd'
+
 # Combine cd and ls
 alias cdl='cl'
 cl() {
