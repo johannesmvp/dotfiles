@@ -39,17 +39,21 @@ alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 alias l.='ls -d .*'
 
 # Sudo stuff
-alias 'apt-get'="echo;sudo apt-get"
-alias 'iptables'="echo;sudo iptables"
-alias 'ifconfig'='sudo ifconfig'
+type -P iptables > /dev/null \
+	&& alias 'iptables'="echo;sudo iptables"
+type -P ifconfig > /dev/null \
+	&& alias 'ifconfig'='sudo ifconfig'
+# apt-get
+type -P apt-get > /dev/null \
+	&& alias 'apt-get'="echo;sudo apt-get" \
+	&& alias canhaz='echo;sudo apt-get install' \
+	&& alias icanhaz='echo;sudo apt-get update && sudo apt-get install' \
+	&& alias uppy='echo;sudo apt-get update && sudo apt-get upgrade'
 
 # Enable aliases to be sudo’ed
-alias sudo='sudo '
+type -P sudo > /dev/null \
+	&& alias sudo='sudo '
 
-# Apt-get
-alias canhaz='echo;sudo apt-get install'
-alias icanhaz='echo;sudo apt-get update && sudo apt-get install'
-alias uppy='echo;sudo apt-get update && sudo apt-get upgrade'
 
 # OS X has no `md5sum`, so use `md5` as a fallback
 type -P md5sum > /dev/null \
@@ -60,7 +64,8 @@ type -P sha1sum > /dev/null \
 	|| alias sha1sum="shasum"
 
 # Screen
-alias descreen='screen -dmS'
+type -P screen > /dev/null \
+	&& alias descreen='screen -dmS'
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
@@ -70,13 +75,15 @@ alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 alias badge="tput bel"
 
 # One of @janmoesen’s ProTip™s
-for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-alias "$method"="lwp-request -m '$method'"
-done
+type -P lwp-request > /dev/null \
+	&& for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+	alias "$method"="lwp-request -m '$method'"
+	done
 
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
-alias stfu="osascript -e 'set volume output muted true'"
-alias pumpitup="osascript -e 'set volume 7'"
+type -P osascript > /dev/null \
+	&& alias stfu="osascript -e 'set volume output muted true'" \
+	&& alias pumpitup="osascript -e 'set volume 7'"
 
 # Git aliases
 alias g="git"
