@@ -115,3 +115,6 @@ alias myip='curl ip.frostia.net'
 
 # identify and search for active network connections
 spy () { lsof -i -P +c 0 +M | grep -i "$1" }
+
+# Show lines that are not blank or commented out
+alias active='grep -v -e "^$" -e"^ *#"'
