@@ -120,3 +120,8 @@ spy (){
 
 # Show lines that are not blank or commented out
 alias active='grep -v -e "^$" -e"^ *#"'
+
+# Serve directory on localhost:8888
+servedir(){
+	python -m SimpleHTTPServer 8000
+}
