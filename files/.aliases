@@ -27,6 +27,12 @@ cl() {
     fi
 }
 
+# Combine mkdir and cd
+alias cdmkdir='mkdircd'
+function mkdircd() {
+  mkdir -p "$1" && cd "$1";
+}
+
 # List all files
 alias l='ls -alFh'
 alias ll='ls -alFh'
