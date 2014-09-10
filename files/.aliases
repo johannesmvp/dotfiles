@@ -71,7 +71,10 @@ type -P sha1sum > /dev/null \
 
 # Screen
 type -P screen > /dev/null \
-	&& alias descreen='screen -dmS'
+	&& alias descreen='screen -dmS' \
+	&& alias sc="screen -S" \
+	&& alias sl="screen -ls" \
+	&& alias sr="screen -r"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
