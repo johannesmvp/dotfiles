@@ -119,6 +119,8 @@ alias brwe="brew"
 
 # ip address
 alias myip='curl ip.frostia.net'
+alias myip4='curl 4.ip.frostia.net'
+alias myip6='curl 6.ip.frostia.net'
 
 # identify and search for active network connections
 spy (){
