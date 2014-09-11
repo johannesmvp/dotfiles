@@ -44,6 +44,9 @@ alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 # List hidden files
 alias l.='ls -d .*'
 
+# colorcat
+alias ccat='pygmentize'
+
 # Sudo stuff
 type -P iptables > /dev/null \
 	&& alias 'iptables'="echo;sudo iptables"
