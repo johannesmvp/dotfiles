@@ -110,6 +110,7 @@ alias gpush="git push"
 alias gbr="git branch"
 alias gco="git checkout"
 alias glast="git last"
+alias gstapush="git stashpush"
 # gitignore.io
 function gi(){
     curl http://gitignore.io/api/\$@ ;
