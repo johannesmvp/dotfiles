@@ -80,7 +80,7 @@ type -P screen > /dev/null \
 	&& alias sr="screen -r"
 
 # Recursively delete `.DS_Store` files
-alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+alias cleanup="find . -type f \( -name '*.DS_Store' -or -name 'Thumbs.db' \) -ls -delete"
 
 # Ring the terminal bell, and put a badge on Terminal.app’s Dock icon
 # (useful when executing time-consuming commands)
