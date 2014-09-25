@@ -136,3 +136,6 @@ alias active='grep -v -e "^$" -e"^ *#"'
 servedir(){
 	python -m SimpleHTTPServer 8000
 }
+
+# reload the bash profile files
+alias reload='source ~/.profile'
