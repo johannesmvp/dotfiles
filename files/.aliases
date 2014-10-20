@@ -137,5 +137,9 @@ servedir(){
 	python -m SimpleHTTPServer 8000
 }
 
+# shortcut to router/modem web gui
+alias router="command -v route >/dev/null && open http://$(route -n get default | grep gateway | awk -F ': ' '{ print $2 }')"
+
+
 # reload the bash profile files
 alias reload='source ~/.profile'
