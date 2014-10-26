@@ -34,12 +34,12 @@ function mkdircd() {
 }
 
 # List all files
-alias l='ls -alFh'
-alias ll='ls -alFh'
-alias ls='ls -F'
+alias l='ls -alph'
+alias ll='ls -alph'
+alias ls='ls -p'
 
 # List only directories
-alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
+alias lsd="ls -lp ${colorflag} | grep --color=never '^d'"
 
 # List hidden files
 alias l.='ls -d .*'
