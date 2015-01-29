@@ -140,8 +140,8 @@ servedir(){
 }
 
 # shortcut to router/modem web gui
-type -P route > /dev/null \
-	&& alias router="command -v route >/dev/null && open http://$(route -n get default | grep gateway | awk -F ': ' '{ print $2 }')"
+type -P netstat > /dev/null \
+	&& alias router="command -v netstat >/dev/null && open http://$(netstat -rn |grep -iE "(^default|^0\.0\.0\.0)"| awk '{ print $2 }')"
 
 
 # reload the bash profile files
