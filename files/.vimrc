@@ -17,6 +17,7 @@ noremap ;; ;
 
 " Enable line numbers
 set number
+set relativenumber
 
 " Don't wrap lines
 set nowrap
