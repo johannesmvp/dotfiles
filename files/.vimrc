@@ -7,8 +7,9 @@ set expandtab
 set shiftwidth=0
 set shiftround
 
-" Always set autoindenting on
+" Indentation
 set autoindent
+set smartindent
 
 " Save a keypress: map semi-colon to colon
 map ; :
