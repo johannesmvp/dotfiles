@@ -34,7 +34,7 @@ function mkdircd() {
 }
 
 # List all files
-alias l='ls -alph'
+alias l='ls -aph'
 alias ll='ls -alph'
 alias ls='ls -p'
 
