@@ -28,8 +28,8 @@ cl() {
 }
 
 # Combine mkdir and cd
-alias cdmkdir='mkdircd'
-function mkdircd() {
+alias mkdircd='cdmkdir'
+function cdmkdir() {
 	# check the input 
 	if [ ! $1 ] || [ $2 ] || [ $1 == '-h' ] ; then
 		echo "Usage: cdmkdir (filename)"
