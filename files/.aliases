@@ -30,6 +30,12 @@ cl() {
 # Combine mkdir and cd
 alias cdmkdir='mkdircd'
 function mkdircd() {
+	# check the input 
+	if [ ! $1 ] || [ $2 ] || [ $1 == '-h' ] ; then
+		echo "Usage: cdmkdir (filename)"
+		return 2
+	fi
+
 	# check if a file with that name exists
     if [ -e $1 ] ; then
 		echo "cdmkdir: $1 exists"
