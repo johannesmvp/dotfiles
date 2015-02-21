@@ -16,7 +16,7 @@ echo "Copying dotfiles.."
 #profile:
 $RSYNC $BASE/.profile $TARGET/.profile
 $RSYNC $BASE/.bash_prompt $TARGET/.bash_prompt
-$RSYNC $BASE/.aliases $TARGET/.bash_aliases
+$RSYNC $BASE/.bash_aliases $TARGET/.bash_aliases
 
 #git:
 # .gitconfig
