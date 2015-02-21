@@ -62,7 +62,7 @@ type -P pygmentize > /dev/null \
 
 # ccze
 type -P ccze > /dev/null \
-    && alias czze"='ccze'
+    && alias czze='ccze'
 
 # Sudo stuff
 type -P iptables > /dev/null \
