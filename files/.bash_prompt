@@ -35,8 +35,8 @@ bakcyn='\e[46m'   # Cyan
 bakwht='\e[47m'   # White
 txtrst='\e[0m'    # Text Reset
 
-if [ -f .bash_prompt_local ] ; then
-    . .bash_prompt_local
+if [ -f ~/.bash_prompt_local ] ; then
+    . ~/.bash_prompt_local
 else
     # define the color here, using the colors above
     COLOR=${bakwht}

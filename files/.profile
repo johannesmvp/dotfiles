@@ -24,6 +24,6 @@ fi
 export LC_ALL="en_US.UTF-8"
 
 # Check for local config
-if [ -f .profile_local ] ; then
-    . .profile_local
+if [ -f ~/.profile_local ] ; then
+    . ~/.profile_local
 fi
