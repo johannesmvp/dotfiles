@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Folder containing the files
+# Folders containing the files
 BASE="homedir"
 BASE_SSH="ssh"
 BASE_GPG="gpg"
