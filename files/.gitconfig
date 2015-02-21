@@ -16,3 +16,6 @@
 
 [url "git@bitbucket.org:johannesmvp/"]
     pushInsteadOf = https://johannesmvp@bitbucket.org/
+
+[color]
+	ui = auto
