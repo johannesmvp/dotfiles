@@ -69,6 +69,7 @@ type -P iptables > /dev/null \
 	&& alias 'iptables'="echo;sudo iptables"
 type -P ifconfig > /dev/null \
 	&& alias 'ifconfig'='sudo ifconfig'
+
 # apt-get
 type -P apt-get > /dev/null \
 	&& alias 'apt-get'="echo;sudo apt-get" \
