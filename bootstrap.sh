@@ -1,8 +1,13 @@
 #!/bin/sh
 
 # Folder containing the files
-BASE=files
-TARGET=~
+BASE="homedir"
+BASE_SSH="ssh"
+BASE_GPG="gpg"
+
+TARGET="~"
+TARGET_SSH="~/.ssh"
+TARGET_GPG="~/.gnupg"
 
 RSYNC='rsync --backup --update --itemize-changes --checksum'
 
@@ -39,21 +44,21 @@ if [ -r $TARGET/.vimrc_local ] ; then
 fi
 
 #gpg:
-mkdir -p $TARGET/.gnupg && \
-$RSYNC $BASE/gpg.conf $TARGET/.gnupg/gpg.conf
+mkdir -p $TARGET_GPG && \
+$RSYNC $BASE_GPG/gpg.conf $TARGET_GPG/gpg.conf
 
-if [ -r $TARGET/.gnupg/gpg.conf_local ] ; then
-	echo "cat $TARGET/.gnupg/gpg.conf_local >> $TARGET/.gnupg/gpg.conf"
-	cat $TARGET/.gnupg/gpg.conf_local >> $TARGET/.gnupg/gpg.conf
+if [ -r $TARGET_GPG/gpg.conf_local ] ; then
+	echo "cat $TARGET_GPG/gpg.conf_local >> $TARGET_GPG/gpg.conf"
+	cat $TARGET_GPG/gpg.conf_local >> $TARGET_GPG/gpg.conf
 fi
 
 #ssh:
-mkdir -p $TARGET/.ssh && \
-$RSYNC $BASE/authorized_keys $TARGET/.ssh/authorized_keys
+mkdir -p $TARGET_SSH && \
+$RSYNC $BASE_SSH/authorized_keys $TARGET_SSH/authorized_keys
 
-if [ -r $TARGET/.ssh/authorized_keys_local ] ; then
-	echo "cat $TARGET/.ssh/authorized_keys_local >> $TARGET/.ssh/authorized_keys"
-	cat $TARGET/.ssh/authorized_keys_local >> $TARGET/.ssh/authorized_keys
+if [ -r $TARGET_SSH/authorized_keys_local ] ; then
+	echo "cat $TARGET_SSH/authorized_keys_local >> $TARGET_SSH/authorized_keys"
+	cat $TARGET_SSH/authorized_keys_local >> $TARGET_SSH/authorized_keys
 fi
 
 echo "Done!"
