@@ -16,24 +16,17 @@ RSYNC='rsync --backup --update --itemize-changes --checksum'
 
 
 #profile:
-echo
-echo "PROFILE:"
 $RSYNC $BASE/.profile $TARGET/.profile
 $RSYNC $BASE/.bash_prompt $TARGET/.bash_prompt
 $RSYNC $BASE/.aliases $TARGET/.bash_aliases
 
 #git:
-echo
-echo "GIT:"
-
 # .gitconfig
 $RSYNC $BASE/.gitconfig $TARGET/.gitconfig
 
 if [ -r $TARGET/.gitconfig_local ] ; then
-	echo "cat $TARGET/.gitconfig_local >> $TARGET/.gitconfig"
+	echo "$TARGET/.gitconfig_local >> $TARGET/.gitconfig"
 	cat $TARGET/.gitconfig_local >> $TARGET/.gitconfig
-else
- 	echo "$TARGET/.gitconfig_local not found"
 fi
 
 # .gitignore_global
@@ -42,46 +35,32 @@ $RSYNC $BASE/.gitignore_global $TARGET/.gitignore_global
 if [ -r $TARGET/.gitignore_global_local ] ; then
 	echo "cat $TARGET/.gitignore_global_local >> $TARGET/.gitignore_global"
 	cat $TARGET/.gitignore_global_local >> $TARGET/.gitignore_global
-else
-	echo "$TARGET/.gitignore_global_local not found"
 fi
 
 #vim:
-echo
-echo "VIM:"
 $RSYNC $BASE/.vimrc $TARGET/.vimrc
 
 if [ -r $TARGET/.vimrc_local ] ; then
 	echo "cat $TARGET/.vimrc_local >> $TARGET/.vimrc"
 	cat $TARGET/.vimrc_local >> $TARGET/.vimrc
-else
- 	echo "$TARGET/.vimrc_local not found"
 fi
 
 #gpg:
-echo
-echo "GPG:"
 mkdir -p $TARGET/.gnupg && \
 $RSYNC $BASE/gpg.conf $TARGET/.gnupg/gpg.conf
 
 if [ -r $TARGET/.gnupg/gpg.conf_local ] ; then
 	echo "cat $TARGET/.gnupg/gpg.conf_local >> $TARGET/.gnupg/gpg.conf"
 	cat $TARGET/.gnupg/gpg.conf_local >> $TARGET/.gnupg/gpg.conf
-else
-	echo "$TARGET/.gnupg/gpg.conf_local not found"
 fi
 
 #ssh:
-echo
-echo "SSH:"
 mkdir -p $TARGET/.ssh && \
 $RSYNC $BASE/authorized_keys $TARGET/.ssh/authorized_keys
 
 if [ -r $TARGET/.ssh/authorized_keys_local ] ; then
 	echo "cat $TARGET/.ssh/authorized_keys_local >> $TARGET/.ssh/authorized_keys"
 	cat $TARGET/.ssh/authorized_keys_local >> $TARGET/.ssh/authorized_keys
-else
- 	echo "$TARGET/.ssh/authorized_keys_local not found"
 fi
 
 #diff:
