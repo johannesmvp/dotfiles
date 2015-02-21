@@ -6,14 +6,6 @@ TARGET=~
 
 RSYNC='rsync --backup --update --itemize-changes --checksum'
 
-#help:
-#echo "Usage: make (item|diff)"
-#echo " where (item): all, profile, git, vim, gpg, ssh"
-#echo "       (diff): show changes"
-#echo
-#echo "Appending _local to certain files in $TARGET will have"
-#echo "them appended to the dotfiles."
-
 #profile:
 $RSYNC $BASE/.profile $TARGET/.profile
 $RSYNC $BASE/.bash_prompt $TARGET/.bash_prompt
