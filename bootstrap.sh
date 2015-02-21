@@ -85,15 +85,15 @@ fi
 #diff:
 echo
 echo "DIFF:"
-diff -qs --new-file $BASE/.profile $TARGET/.profile
-diff -qs --new-file $BASE/.bash_prompt $TARGET/.bash_prompt
-diff -qs --new-file $BASE/.aliases $TARGET/.bash_aliases	
+#diff -qs --new-file $BASE/.profile $TARGET/.profile
+#diff -qs --new-file $BASE/.bash_prompt $TARGET/.bash_prompt
+#diff -qs --new-file $BASE/.aliases $TARGET/.bash_aliases	
 
-diff -qs --new-file $BASE/.gitconfig $TARGET/.gitconfig
-diff -qs --new-file $BASE/.gitignore_global $TARGET/.gitignore_global
+#diff -qs --new-file $BASE/.gitconfig $TARGET/.gitconfig
+#diff -qs --new-file $BASE/.gitignore_global $TARGET/.gitignore_global
 
-diff -qs --new-file $BASE/.vimrc $TARGET/.vimrc
+#diff -qs --new-file $BASE/.vimrc $TARGET/.vimrc
 
-diff -qs --new-file $BASE/gpg.conf $TARGET/.gnupg/gpg.conf
+#diff -qs --new-file $BASE/gpg.conf $TARGET/.gnupg/gpg.conf
 
-diff -qs --new-file $BASE/authorized_keys $TARGET/.ssh/authorized_keys
+#diff -qs --new-file $BASE/authorized_keys $TARGET/.ssh/authorized_keys
