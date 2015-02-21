@@ -6,6 +6,8 @@ TARGET=~
 
 RSYNC='rsync --backup --update --itemize-changes --checksum'
 
+echo "Copying dotfiles.."
+
 #profile:
 $RSYNC $BASE/.profile $TARGET/.profile
 $RSYNC $BASE/.bash_prompt $TARGET/.bash_prompt
@@ -53,3 +55,5 @@ if [ -r $TARGET/.ssh/authorized_keys_local ] ; then
 	echo "cat $TARGET/.ssh/authorized_keys_local >> $TARGET/.ssh/authorized_keys"
 	cat $TARGET/.ssh/authorized_keys_local >> $TARGET/.ssh/authorized_keys
 fi
+
+echo "Done!"
