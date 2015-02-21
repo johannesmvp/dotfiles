@@ -4,6 +4,8 @@
 BASE=files
 TARGET=~
 
+RSYNC='rsync --backup --update --itemize-changes --checksum'
+
 #help:
 #echo "Usage: make (item|diff)"
 #echo " where (item): all, profile, git, vim, gpg, ssh"
@@ -16,16 +18,16 @@ TARGET=~
 #profile:
 echo
 echo "PROFILE:"
-cp --backup=numbered --verbose $BASE/.profile $TARGET/.profile
-cp --backup=numbered --verbose $BASE/.bash_prompt $TARGET/.bash_prompt
-cp --backup=numbered --verbose $BASE/.aliases $TARGET/.bash_aliases
+$RSYNC $BASE/.profile $TARGET/.profile
+$RSYNC $BASE/.bash_prompt $TARGET/.bash_prompt
+$RSYNC $BASE/.aliases $TARGET/.bash_aliases
 
 #git:
 echo
 echo "GIT:"
 
 # .gitconfig
-cp --backup=numbered --verbose $BASE/.gitconfig $TARGET/.gitconfig
+$RSYNC $BASE/.gitconfig $TARGET/.gitconfig
 
 if [ -r $TARGET/.gitconfig_local ] ; then
 	echo "cat $TARGET/.gitconfig_local >> $TARGET/.gitconfig"
@@ -35,7 +37,7 @@ else
 fi
 
 # .gitignore_global
-cp --backup=numbered --verbose $BASE/.gitignore_global $TARGET/.gitignore_global
+$RSYNC $BASE/.gitignore_global $TARGET/.gitignore_global
 
 if [ -r $TARGET/.gitignore_global_local ] ; then
 	echo "cat $TARGET/.gitignore_global_local >> $TARGET/.gitignore_global"
@@ -47,7 +49,7 @@ fi
 #vim:
 echo
 echo "VIM:"
-cp --backup=numbered --verbose $BASE/.vimrc $TARGET/.vimrc
+$RSYNC $BASE/.vimrc $TARGET/.vimrc
 
 if [ -r $TARGET/.vimrc_local ] ; then
 	echo "cat $TARGET/.vimrc_local >> $TARGET/.vimrc"
@@ -60,7 +62,7 @@ fi
 echo
 echo "GPG:"
 mkdir -p $TARGET/.gnupg && \
-cp --backup=numbered --verbose $BASE/gpg.conf $TARGET/.gnupg/gpg.conf
+$RSYNC $BASE/gpg.conf $TARGET/.gnupg/gpg.conf
 
 if [ -r $TARGET/.gnupg/gpg.conf_local ] ; then
 	echo "cat $TARGET/.gnupg/gpg.conf_local >> $TARGET/.gnupg/gpg.conf"
@@ -73,7 +75,7 @@ fi
 echo
 echo "SSH:"
 mkdir -p $TARGET/.ssh && \
-cp --backup=numbered --verbose $BASE/authorized_keys $TARGET/.ssh/authorized_keys
+$RSYNC $BASE/authorized_keys $TARGET/.ssh/authorized_keys
 
 if [ -r $TARGET/.ssh/authorized_keys_local ] ; then
 	echo "cat $TARGET/.ssh/authorized_keys_local >> $TARGET/.ssh/authorized_keys"
