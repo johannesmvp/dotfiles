@@ -35,8 +35,12 @@ bakcyn='\e[46m'   # Cyan
 bakwht='\e[47m'   # White
 txtrst='\e[0m'    # Text Reset
 
-# define the color here, using the colors above
-COLOR=${bakwht}
+if [ -f .bash_prompt_local ] ; then
+    . .bash_prompt_local
+else
+    # define the color here, using the colors above
+    COLOR=${bakwht}
+fi
 
 # let's mix us a prompt!
 # Hostname.local  (0) [ ~/This/is/a/folder/ ]
