@@ -60,6 +60,10 @@ alias l.='ls -d .*'
 type -P pygmentize > /dev/null \
     && alias ccat='pygmentize'
 
+# ccze
+type -P ccze > /dev/null \
+    && alias czze"='ccze'
+
 # Sudo stuff
 type -P iptables > /dev/null \
 	&& alias 'iptables'="echo;sudo iptables"
