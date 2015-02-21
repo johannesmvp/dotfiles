@@ -14,7 +14,6 @@ RSYNC='rsync --backup --update --itemize-changes --checksum'
 #echo "Appending _local to certain files in $TARGET will have"
 #echo "them appended to the dotfiles."
 
-
 #profile:
 $RSYNC $BASE/.profile $TARGET/.profile
 $RSYNC $BASE/.bash_prompt $TARGET/.bash_prompt
@@ -62,19 +61,3 @@ if [ -r $TARGET/.ssh/authorized_keys_local ] ; then
 	echo "cat $TARGET/.ssh/authorized_keys_local >> $TARGET/.ssh/authorized_keys"
 	cat $TARGET/.ssh/authorized_keys_local >> $TARGET/.ssh/authorized_keys
 fi
-
-#diff:
-#echo
-#echo "DIFF:"
-#diff -qs --new-file $BASE/.profile $TARGET/.profile
-#diff -qs --new-file $BASE/.bash_prompt $TARGET/.bash_prompt
-#diff -qs --new-file $BASE/.aliases $TARGET/.bash_aliases	
-
-#diff -qs --new-file $BASE/.gitconfig $TARGET/.gitconfig
-#diff -qs --new-file $BASE/.gitignore_global $TARGET/.gitignore_global
-
-#diff -qs --new-file $BASE/.vimrc $TARGET/.vimrc
-
-#diff -qs --new-file $BASE/gpg.conf $TARGET/.gnupg/gpg.conf
-
-#diff -qs --new-file $BASE/authorized_keys $TARGET/.ssh/authorized_keys
