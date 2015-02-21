@@ -1,4 +1,5 @@
 name='\H'
+[[ `whoami` == "johannes" ]] || name="\u@$name"
 
 # colors
 txtblk='\e[0;30m' # Black - Regular
