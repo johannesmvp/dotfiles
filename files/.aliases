@@ -57,13 +57,19 @@ alias lsd="ls -lp ${colorflag} | grep --color=never '^d'"
 alias l.='ls -d .*'
 
 # colorcat
-alias ccat='pygmentize'
+type -P pygmentize > /dev/null \
+    && alias ccat='pygmentize'
+
+# ccze
+type -P ccze > /dev/null \
+    && alias czze"='ccze'
 
 # Sudo stuff
 type -P iptables > /dev/null \
 	&& alias 'iptables'="echo;sudo iptables"
 type -P ifconfig > /dev/null \
 	&& alias 'ifconfig'='sudo ifconfig'
+
 # apt-get
 type -P apt-get > /dev/null \
 	&& alias 'apt-get'="echo;sudo apt-get" \
@@ -117,6 +123,7 @@ alias gst="git status"
 alias gmit="git commit -m"
 alias gamit="git commit -a -m"
 alias gadd="git add"
+alias gd="git diff"
 alias gdiff="git diff"
 alias gdift="git difftool"
 alias gpull="git pull"
