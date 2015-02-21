@@ -57,7 +57,8 @@ alias lsd="ls -lp ${colorflag} | grep --color=never '^d'"
 alias l.='ls -d .*'
 
 # colorcat
-alias ccat='pygmentize'
+type -P pygmentize > /dev/null \
+    && alias ccat='pygmentize'
 
 # Sudo stuff
 type -P iptables > /dev/null \
