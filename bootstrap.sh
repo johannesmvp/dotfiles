@@ -83,8 +83,8 @@ else
 fi
 
 #diff:
-echo
-echo "DIFF:"
+#echo
+#echo "DIFF:"
 #diff -qs --new-file $BASE/.profile $TARGET/.profile
 #diff -qs --new-file $BASE/.bash_prompt $TARGET/.bash_prompt
 #diff -qs --new-file $BASE/.aliases $TARGET/.bash_aliases	
