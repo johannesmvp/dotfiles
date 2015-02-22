@@ -92,12 +92,12 @@ fi
 ## GPG
 ### Check target permissions
 
-if [ ! -w "$TARGET_GPG"  ]; then
-	if [ ! -d "$TARGET_GPG" ] ; then
-		mkdir -p "$TARGET_GPG" >/dev/null 2>&1
-	fi
+if [ ! -d "$TARGET_GPG" ] || [ ! -w "$TARGET_GPG" ] ; then
+	mkdir -p "$TARGET_GPG" >/dev/null 2>&1
+	if [ ! -d "$TARGET_GPG" ] || [ ! -w "$TARGET_GPG" ] ; then
 		echo "error: check destination permissions ($TARGET_GPG)"
 		exit 1
+	fi
 fi
 
 ### Copy files
