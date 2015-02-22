@@ -32,7 +32,7 @@ done
 ### Check permissions
 if [ ! -d "$TARGET" ] || [ ! -w "$TARGET" ] ; then
 	echo "error: check destination permissions ($TARGET)"
-	exit 1
+	exit 3
 fi
 ### Copy
 $RSYNC "$BASE/" "$TARGET/"
@@ -72,7 +72,7 @@ if [ ! -d "$TARGET_SSH" ] || [ ! -w "$TARGET_SSH" ] ; then
 	mkdir -p "$TARGET_SSH" >/dev/null 2>&1
 	if [ ! -d "$TARGET_SSH" ] || [ ! -w "$TARGET_SSH" ] ; then
 		echo "error: check destination permissions ($TARGET_SSH)"
-		exit 1
+		exit 3
 	fi
 fi
 
@@ -96,7 +96,7 @@ if [ ! -d "$TARGET_GPG" ] || [ ! -w "$TARGET_GPG" ] ; then
 	mkdir -p "$TARGET_GPG" >/dev/null 2>&1
 	if [ ! -d "$TARGET_GPG" ] || [ ! -w "$TARGET_GPG" ] ; then
 		echo "error: check destination permissions ($TARGET_GPG)"
-		exit 1
+		exit 3
 	fi
 fi
 
