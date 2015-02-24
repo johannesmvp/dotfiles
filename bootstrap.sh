@@ -14,7 +14,6 @@ TARGET_SSH=$TARGET/.ssh
 TARGET_GPG=$TARGET/.gnupg
 
 ## Application parameters
-RSYNC='rsync --backup --update --itemize-changes --checksum --recursive'
 RSYNC='rsync --backup --itemize-changes --checksum --recursive'
 
 # COPY FILES
