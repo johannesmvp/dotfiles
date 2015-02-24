@@ -38,6 +38,11 @@ fi
 ### Copy
 $RSYNC "$BASE/" "$TARGET/"
 
+# Check/migrate for .profile_local
+if [ -r "$TARGET/.profile_local" ] && [ ! -r "$TARGET/.bash_profile_local" ] ;  then
+    $RSYNC "$TARGET/.profile_local" "$TARGET/.bash_profile_local"
+fi
+
 ### Append _local
 #### -> .gitconfig
 if [ -r "$TARGET/.gitconfig_local" ] ; then
