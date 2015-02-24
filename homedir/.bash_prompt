@@ -46,4 +46,4 @@ fi
 # let's mix us a prompt!
 # Hostname.local  (0) [ ~/This/is/a/folder/ ]
 # : 
-PS1="\n\[${bldblk} ${COLOR}\] ${name} \[${txtrst}\] (\$?) [ \w/ ]\n: "
+PS1="\n\[${bldblk}${COLOR}\] ${name} \[${txtrst}\] (\$?) [ \w/ ]\n: "
