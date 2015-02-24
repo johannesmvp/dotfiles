@@ -38,6 +38,10 @@ fi
 ### Copy
 $RSYNC "$BASE/" "$TARGET/"
 
+# Warn for conflicting .profile
+if [ -r "$TARGET/.profile" ] && [ -r "$TARGET/.bash_profile" ] ; then
+    echo "WARNING: existing .profile conflicts with .bash_profile!"
+fi
 # Check/migrate for .profile_local
 if [ -r "$TARGET/.profile_local" ] && [ ! -r "$TARGET/.bash_profile_local" ] ;  then
     $RSYNC "$TARGET/.profile_local" "$TARGET/.bash_profile_local"
