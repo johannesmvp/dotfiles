@@ -162,4 +162,4 @@ type -P netstat > /dev/null \
 
 
 # reload the bash profile files
-alias reload='source ~/.profile'
+alias reload='source ~/.bash_profile'
