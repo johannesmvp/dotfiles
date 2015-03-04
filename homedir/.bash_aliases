@@ -160,6 +160,10 @@ servedir(){
 type -P netstat > /dev/null \
 	&& alias router="command -v netstat >/dev/null && open http://$(netstat -rn |grep -iE "(^default|^0\.0\.0\.0)"| awk '{ print $2 }')"
 
+# use htop instead of top
+type -P htop > /dev/null \
+    && alias top="htop"
+
 
 # reload the bash profile files
 alias reload='source ~/.bash_profile'
