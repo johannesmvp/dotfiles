@@ -163,3 +163,9 @@ type -P netstat > /dev/null \
 
 # reload the bash profile files
 alias reload='source ~/.bash_profile'
+
+# load the local aliases, if available
+if [ -f ~/.bash_aliases_local ]; then
+    . ~/.bash_aliases_local
+fi
+
