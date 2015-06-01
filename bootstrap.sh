@@ -46,13 +46,6 @@ if [ -r "$TARGET/.profile_local" ] && [ ! -r "$TARGET/.bash_profile_local" ] ;  
     $RSYNC "$TARGET/.profile_local" "$TARGET/.bash_profile_local"
 fi
 
-### Append _local
-#### -> .vim
-if [ -r "$TARGET/.vimrc_local" ] ; then
-	echo "$TARGET/.vimrc_local >> $TARGET/.vimrc"
-	cat "$TARGET/.vimrc_local" >> "$TARGET/.vimrc"
-fi
-
 ## SSH / authorized keys
 ### Check target permissions
 if [ ! -d "$TARGET_SSH" ] || [ ! -w "$TARGET_SSH" ] ; then
