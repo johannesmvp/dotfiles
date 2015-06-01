@@ -47,11 +47,6 @@ if [ -r "$TARGET/.profile_local" ] && [ ! -r "$TARGET/.bash_profile_local" ] ;  
 fi
 
 ### Append _local
-#### -> .gitconfig
-if [ -r "$TARGET/.gitconfig_local" ] ; then
-	echo "$TARGET/.gitconfig_local >> $TARGET/.gitconfig"
-	cat "$TARGET/.gitconfig_local" >> "$TARGET/.gitconfig"
-fi
 #### -> .gitignore_global
 if [ -r "$TARGET/.gitignore_global_local" ] ; then
 	echo "$TARGET/.gitignore_global_local >> $TARGET/.gitignore_global"
