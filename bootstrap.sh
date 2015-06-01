@@ -47,11 +47,6 @@ if [ -r "$TARGET/.profile_local" ] && [ ! -r "$TARGET/.bash_profile_local" ] ;  
 fi
 
 ### Append _local
-#### -> .gitignore_global
-if [ -r "$TARGET/.gitignore_global_local" ] ; then
-	echo "$TARGET/.gitignore_global_local >> $TARGET/.gitignore_global"
-	cat "$TARGET/.gitignore_global_local" >> "$TARGET/.gitignore_global"
-fi
 #### -> .vim
 if [ -r "$TARGET/.vimrc_local" ] ; then
 	echo "$TARGET/.vimrc_local >> $TARGET/.vimrc"
