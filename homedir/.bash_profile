@@ -1,4 +1,5 @@
 # Basic stuff
+export HISTCONTROL=ignoredups:ignorespace
 export HISTIGNORE=":exit:shutdown:reboot"
 
 # Aliases
