@@ -31,13 +31,13 @@ cl() {
 alias mkdircd='cdmkdir'
 function cdmkdir() {
 	# check the input 
-	if [ ! $1 ] || [ $2 ] || [ $1 == '-h' ] ; then
+	if [ ! "$1" ] || [ "$1" == '-h' ] ; then
 		echo "Usage: cdmkdir (filename)"
 		return 2
 	fi
 
 	# check if a file with that name exists
-    if [ -e $1 ] ; then
+    if [ -e "$1" ] ; then
 		echo "cdmkdir: $1 exists"
 		return 1
 	else
