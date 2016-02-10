@@ -164,6 +164,9 @@ type -P netstat > /dev/null \
 type -P htop > /dev/null \
     && alias top="htop"
 
+# shortcut to download the Brezan price list
+alias brezan='cd /tmp ; wget http://www.brezan.nl/content/downloads/files/Brezan_prijzen_ASCII_Ned.zip && unzip Brezan_prijzen_ASCII_Ned.zip && cd Brezan_prijzen_ASCII_Ned/'
+alias brezangroep='cd /tmp ; wget http://www.brezan.nl/content/downloads/files/Brezan_prijzen_per_groep_ASCII_Ned.zip && unzip Brezan_prijzen_per_groep_ASCII_Ned.zip && cd Brezan_prijzen_per_groep_ASCII_Ned/'
 
 # reload the bash profile files
 alias reload='source ~/.bash_profile'
