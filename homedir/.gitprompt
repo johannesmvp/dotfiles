@@ -10,6 +10,8 @@
 # GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
 
 # Using osx brew
-if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-    source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+if [ $(type -P brew) ] ; then
+    if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+        source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+    fi
 fi
