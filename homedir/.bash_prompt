@@ -46,11 +46,11 @@ fi
 # include .gitprompt, if it exists
 if [ -f ~/.gitprompt ]; then
 
+    . ~/.gitprompt
+
     if [ -f ~/.gitprompt_local ]; then
         . ~/.gitprompt_local
     fi
-
-    . ~/.gitprompt
 fi
 
 # let's mix us a prompt!
