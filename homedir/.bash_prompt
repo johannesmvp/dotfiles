@@ -38,9 +38,16 @@ txtrst='\e[0m'    # Text Reset
 
 if [ -f ~/.bash_prompt_local ] ; then
     . ~/.bash_prompt_local
-else
-    # define the color here, using the colors above
-    COLOR=${bakwht}
+fi
+
+## Use fallback colors if the variables are not set
+# Text
+if [ -z "$TEXTCOLOR" ] ; then
+    TEXTCOLOR=${bldblk}
+fi
+# Background
+if [ -z "$BACKGROUNDCOLOR" ] ; then
+    BACKGROUNDCOLOR=${bakwht}
 fi
 
 # include .gitprompt, if it exists
@@ -56,4 +63,4 @@ fi
 # let's mix us a prompt!
 # Hostname.local  (0) [ ~/This/is/a/folder/ ]
 # : 
-PS1="\n\[${bldblk}${COLOR}\] ${name} \[${txtrst}\] (\$?) [ \w/ ]\n: "
+PS1="\n\[${BACKGROUNDCOLOR}${TEXTCOLOR}\] ${name} \[${txtrst}\] (\$?) [ \w/ ]\n: "
