@@ -6,6 +6,9 @@ export HISTIGNORE=":exit:shutdown:reboot"
 if [ -f ~/.bash_aliases ]; then
 	. ~/.bash_aliases
 fi
+if [ -f ~/.bash_aliases_local ]; then
+	. ~/.bash_aliases_local
+fi
 
 # Colored command prompt
 if [ -f ~/.bash_prompt ]; then
