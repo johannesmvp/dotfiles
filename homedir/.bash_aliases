@@ -45,6 +45,9 @@ function cdmkdir() {
     fi
 }
 
+# grep
+alias grep='grep --color=auto'
+
 ## ls
 # List all files
 alias l='ls --color -aph'
