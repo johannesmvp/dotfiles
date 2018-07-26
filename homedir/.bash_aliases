@@ -81,7 +81,7 @@ type -P apt-get > /dev/null \
 
 # apt # overwrite apt-get aliases if apt existsg
 type -P apt > /dev/null \
-  && alias apt='echo;sudo apt install' \
+  && alias apt='echo;sudo apt' \
 	&& alias canhaz='echo;sudo apt install' \
 	&& alias icanhaz='echo;sudo apt update && sudo apt install' \
 	&& alias uppy='echo;sudo apt update && sudo apt upgrade'
