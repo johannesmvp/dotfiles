@@ -79,9 +79,9 @@ type -P apt-get > /dev/null \
 	&& alias icanhaz='echo;sudo apt-get update && sudo apt-get install' \
 	&& alias uppy='echo;sudo apt-get update && sudo apt-get upgrade'
 
-# apt # overwrite apt-get aliases if apt exists
+# apt # overwrite apt-get aliases if apt existsg
 type -P apt > /dev/null \
-  && alias apt='echo;sudo apt install'
+  && alias apt='echo;sudo apt install' \
 	&& alias canhaz='echo;sudo apt install' \
 	&& alias icanhaz='echo;sudo apt update && sudo apt install' \
 	&& alias uppy='echo;sudo apt update && sudo apt upgrade'
