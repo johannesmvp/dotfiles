@@ -45,14 +45,13 @@ function cdmkdir() {
     fi
 }
 
+## ls
 # List all files
 alias l='ls -aph'
 alias ll='ls -alph'
 alias ls='ls -p'
-
 # List only directories
 alias lsd="ls -lp ${colorflag} | grep --color=never '^d'"
-
 # List hidden files
 alias l.='ls -d .*'
 
