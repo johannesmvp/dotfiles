@@ -1,3 +1,6 @@
+# df
+alias dfh='df -h'
+
 # Easier navigation: .., ..., ...., .....
 alias ..="cd .."
 alias ...="cd ../.."
