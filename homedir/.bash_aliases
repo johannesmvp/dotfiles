@@ -61,6 +61,10 @@ alias lsd="ls -lp ${colorflag} | grep --color=auto '^d'"
 # List hidden files
 alias l.='ls -d .*'
 
+# docker aliases
+type -P docker-compose > /dev/null \
+    && alias dopu='docker-compose pull'
+
 # colorcat
 type -P pygmentize > /dev/null \
     && alias ccat='pygmentize'
