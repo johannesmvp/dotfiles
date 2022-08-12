@@ -2,7 +2,7 @@
 syntax on
 
 " Make tabs four spaces wide
-set tabstop=4
+set tabstop=2
 set expandtab
 "set shiftwidth=0
 set shiftround
