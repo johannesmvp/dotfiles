@@ -53,9 +53,9 @@ alias grep='grep --color=auto'
 
 ## ls
 # List all files
-alias l='ls --color -aph'
-alias ll='ls --color -alph'
-alias ls='ls --color -p'
+alias l='ls -aph'
+alias ll='ls -alph'
+alias ls='ls -p'
 # List only directories
 alias lsd="ls -lp ${colorflag} | grep --color=auto '^d'"
 # List hidden files
