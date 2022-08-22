@@ -1,5 +1,5 @@
 " Enable syntax highlighting
-syntax on
+syntax off
 
 " Make tabs four spaces wide
 set tabstop=2
