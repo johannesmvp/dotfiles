@@ -1,5 +1,5 @@
 name='\H'
-[[ `whoami` == "johannes" ]] || name="\u@$name"
+[[ `whoami` == "johannes" || `whoami` == "root" ]] || name="\u@$name"
 
 # colors
 txtblk='\e[0;30m' # Black - Regular
@@ -60,7 +60,18 @@ if [ -f ~/.gitprompt ]; then
     fi
 fi
 
+# Check if the root color is equal to backgroundcolor
+if [ ${BACKGROUNDCOLOR} == ${bakred} ] ; then
+    ROOTCOLORBG=${bakwht}
+    ROOTCOLORFG=${bldred}
+else
+    ROOTCOLORBG=${bakred}
+    ROOTCOLORFG=${bldwht}
+fi
+
 # let's mix us a prompt!
 # Hostname.local  (0) [ ~/This/is/a/folder/ ]
 # : 
-PS1="\n\[${BACKGROUNDCOLOR}${TEXTCOLOR}\] ${name} \[${txtrst}\] (\$?) [ \w/ ]\n: "
+[[ `whoami` == "root" ]] \
+&& PS1="\n\[${bakred}# ${TEXTCOLOR}\] ${BACKGROUNDCOLOR}@${name} \[${txtrst}\] (\$?) [ \w/ ]\n: " \
+|| PS1="\n\[${BACKGROUNDCOLOR}${TEXTCOLOR}\] ${name} \[${txtrst}\] (\$?) [ \w/ ]\n: "
