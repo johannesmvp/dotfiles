@@ -84,14 +84,16 @@ type -P apt-get > /dev/null \
 	&& alias 'apt-get'="echo;sudo apt-get" \
 	&& alias canhaz='echo;sudo apt-get install' \
 	&& alias icanhaz='echo;sudo apt-get update && sudo apt-get install' \
-	&& alias uppy='echo;sudo apt-get update && sudo apt-get upgrade'
+	&& alias uppy='echo;sudo apt-get update && sudo apt-get upgrade' \
+	&& alias uppyy='echo;sudo apt-get update && sudo apt-get -y upgrade'
 
-# apt # overwrite apt-get aliases if apt existsg
+# apt # overwrite apt-get aliases if apt exists
 type -P apt > /dev/null \
   && alias apt='echo;sudo apt' \
 	&& alias canhaz='echo;sudo apt install' \
 	&& alias icanhaz='echo;sudo apt update && sudo apt install' \
-	&& alias uppy='echo;sudo apt update && sudo apt upgrade'
+	&& alias uppy='echo;sudo apt update && sudo apt upgrade' \
+	&& alias uppyy='echo;sudo apt update && sudo apt -y upgrade'
 
 # Enable aliases to be sudo’ed
 type -P sudo > /dev/null \
