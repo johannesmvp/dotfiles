@@ -95,6 +95,10 @@ type -P apt > /dev/null \
 	&& alias uppy='echo;sudo apt update && sudo apt upgrade' \
 	&& alias uppyy='echo;sudo apt update && sudo apt -y upgrade'
 
+# nala needs sudo
+type -P nala > /dev/null \
+  && alias nala='echo;sudo nala'
+
 # Enable aliases to be sudo’ed
 type -P sudo > /dev/null \
 	&& alias sudo='sudo '
