@@ -97,7 +97,8 @@ type -P apt > /dev/null \
 
 # nala needs sudo
 type -P nala > /dev/null \
-  && alias nala='echo;sudo nala'
+  && alias nala='echo;sudo nala' && \
+  alias nuppy='echo;sudo nala upgrade'
 
 # Enable aliases to be sudo’ed
 type -P sudo > /dev/null \
