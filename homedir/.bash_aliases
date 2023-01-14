@@ -62,8 +62,8 @@ alias lsd="ls -lp ${colorflag} | grep --color=auto '^d'"
 alias l.='ls -d .*'
 
 # docker aliases
-type -P docker-compose > /dev/null \
-    && alias dopu='docker-compose pull'
+type -P docker > /dev/null \
+    && alias dopu='docker compose pull'
 
 # colorcat
 type -P pygmentize > /dev/null \
