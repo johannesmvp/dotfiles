@@ -64,7 +64,7 @@ alias l.='ls -d .*'
 # docker aliases
 type -P docker > /dev/null \
     && alias dopu='docker compose pull' \
-    && alias dockup='docker compose up - d'
+    && alias dockup='docker compose up -d'
 
 # colorcat
 type -P pygmentize > /dev/null \
