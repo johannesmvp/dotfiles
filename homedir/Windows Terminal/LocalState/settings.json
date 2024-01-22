@@ -59,27 +59,10 @@
                 "name": "Windows PowerShell"
             },
             {
-                "altGrAliasing": true,
-                "antialiasingMode": "grayscale",
-                "closeOnExit": "graceful",
                 "colorScheme": "Color Scheme 10",
-                "commandline": "ssh stork",
-                "cursorShape": "bar",
-                "experimental.retroTerminalEffect": false,
-                "font": 
-                {
-                    "face": "Cascadia Code",
-                    "size": 12.0
-                },
-                "guid": "{03c3f97f-9d2f-4aba-aed4-7eb651c74209}",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
-                "historySize": 9001,
-                "icon": "C:\\Users\\johannes\\Pictures\\ssh.jpg",
-                "name": "SSH to STORK",
-                "padding": "8, 8, 8, 8",
-                "snapOnInput": true,
-                "startingDirectory": "%USERPROFILE%",
-                "useAcrylic": false
+                "name": "Command Prompt"
             },
             {
                 "altGrAliasing": true,
@@ -97,7 +80,7 @@
                 "guid": "{2e1efb12-eb71-481d-88b1-206d3026891c}",
                 "hidden": false,
                 "historySize": 9001,
-                "icon": "C:\\Users\\johannes\\Pictures\\ssh.jpg",
+                "icon": "%USERPROFILE%/Pictures/ssh.jpg",
                 "name": "SSH to Synkro.me",
                 "padding": "8, 8, 8, 8",
                 "snapOnInput": true,
@@ -120,7 +103,7 @@
                 "guid": "{cf9302d8-0f00-4163-bee8-42703546987a}",
                 "hidden": false,
                 "historySize": 9001,
-                "icon": "C:\\Users\\johannes\\Pictures\\ssh.jpg",
+                "icon": "%USERPROFILE%/Pictures/ssh.jpg",
                 "name": "SSH to Frostia.net",
                 "padding": "8, 8, 8, 8",
                 "snapOnInput": true,
@@ -132,7 +115,7 @@
                 "antialiasingMode": "grayscale",
                 "closeOnExit": "graceful",
                 "colorScheme": "Color Scheme 10",
-                "commandline": "ssh 10.22.1.73",
+                "commandline": "ssh spot.synkro.me",
                 "cursorShape": "bar",
                 "experimental.retroTerminalEffect": false,
                 "font": 
@@ -143,18 +126,12 @@
                 "guid": "{7bd7ba54-a8cd-4486-a96d-cbc0394ee1db}",
                 "hidden": false,
                 "historySize": 9001,
-                "icon": "C:\\Users\\johannes\\Pictures\\ssh.jpg",
-                "name": "SSH to Octopi-PrusaMini",
+                "icon": "%USERPROFILE%/Pictures/ssh.jpg",
+                "name": "SSH to Spot",
                 "padding": "8, 8, 8, 8",
                 "snapOnInput": true,
                 "startingDirectory": "%USERPROFILE%",
                 "useAcrylic": false
-            },
-            {
-                "colorScheme": "Color Scheme 10",
-                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "hidden": false,
-                "name": "Command Prompt"
             },
             {
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
