@@ -1,6 +1,9 @@
 # df
 alias dfh='df -h'
 
+# du with human sorting
+alias hsort='du -d1 -h | sort -h'
+
 # Easier navigation: .., ..., ...., .....
 alias ..="cd .."
 alias ...="cd ../.."
