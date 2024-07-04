@@ -1,8 +1,10 @@
 # df
-alias dfh='df -h'
+type -P df > /dev/null \
+  && alias dfh='df -h'
 
 # du with human sorting
-alias dusort='du -d1 -h | sort -h'
+type -P du > /dev/null \
+  && alias dusort='du -d1 -h | sort -h'
 
 # Easier navigation: .., ..., ...., .....
 alias ..="cd .."
@@ -145,27 +147,29 @@ type -P osascript > /dev/null \
 	&& alias pumpitup="osascript -e 'set volume 7'"
 
 # Git aliases
-alias g="git"
-alias gst="git status"
-alias gmit="git commit -m"
-alias gamit="git commit -a -m"
-alias gadd="git add"
-alias gd="git diff"
-alias gdiff="git diff"
-alias gdift="git difftool"
-alias gpull="git pull"
-alias gpush="git push"
-alias gbr="git branch"
-alias gco="git checkout"
-alias glast="git last"
-alias gstapush="git stashpush"
+type -P git > /dev/null \
+  && alias g="git" \
+  && alias gst="git status" \
+  && alias gmit="git commit -m" \
+  && alias gamit="git commit -a -m" \
+  && alias gadd="git add" \
+  && alias gd="git diff" \
+  && alias gdiff="git diff" \
+  && alias gdift="git difftool" \
+  && alias gpull="git pull" \
+  && alias gpush="git push" \
+  && alias gbr="git branch" \
+  && alias gco="git checkout" \
+  && alias glast="git last" \
+  && alias gstapush="git stashpush"
 # gitignore.io
 function gi(){
     curl http://gitignore.io/api/\$@ ;
 }
 
 # Frequent typo's
-alias brwe="brew"
+type -P brew > /dev/null \
+  && alias brwe="brew"
 
 # ip address
 alias myip='curl ip.frostia.net'
@@ -191,10 +195,6 @@ type -P netstat > /dev/null \
 type -P htop > /dev/null \
     && alias top="htop"
 
-# shortcut to download the Brezan price list
-alias brezan='cd /tmp ; wget http://www.brezan.nl/content/downloads/files/Brezan_prijzen_ASCII_Ned.zip && unzip -u Brezan_prijzen_ASCII_Ned.zip && cd Brezan_prijzen_ASCII_Ned/'
-alias brezangroep='cd /tmp ; wget http://www.brezan.nl/content/downloads/files/Brezan_prijzen_per_groep_ASCII_Ned.zip && unzip -u Brezan_prijzen_per_groep_ASCII_Ned.zip && cd Brezan_prijzen_per_groep_ASCII_Ned/'
-
 # SSH connection multiplexing
 alias sshcheck='ssh -O check'
 alias sshstop='ssh -O stop'
@@ -206,4 +206,3 @@ alias reload='source ~/.bash_profile'
 if [ -f ~/.bash_aliases_local ]; then
     . ~/.bash_aliases_local
 fi
-
