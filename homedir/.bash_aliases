@@ -4,7 +4,8 @@ type -P df > /dev/null \
 
 # du with human sorting
 type -P du > /dev/null \
-  && alias dusort='du -d1 -h | sort -h'
+  && alias dusort='du -d1 -h | sort -h' \
+    && alias duasort='du -d1 -ah | sort -h'
 
 # Easier navigation: .., ..., ...., .....
 alias ..="cd .."
