@@ -72,6 +72,10 @@ type -P docker > /dev/null \
     && alias dopu='docker compose pull' \
     && alias dockup='docker compose up -d'
 
+# other docker things
+type -P docker > /dev/null \
+    && alias dockerplatformio='docker run -e HOME=`pwd` -u $UID -w `pwd` -v `pwd`:`pwd` --rm -it takigama/platformio platformio run'
+
 # colorcat
 type -P pygmentize > /dev/null \
     && alias ccat='pygmentize'
