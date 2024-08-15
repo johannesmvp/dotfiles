@@ -120,14 +120,14 @@ type -P apt-get > /dev/null \
 type -P apt > /dev/null \
   && alias apt='echo;sudo apt' \
 	&& alias canhaz='echo;sudo apt install' \
-	&& alias icanhaz='echo;sudo apt update && sudo apt install' \
 	&& alias uppy='echo;sudo apt update && sudo apt upgrade' \
 	&& alias uppyy='echo;sudo apt update && sudo apt -y upgrade'
 
 # nala
 type -P nala > /dev/null \
   && alias nala='echo;sudo nala' && \
-  alias nuppy='echo;sudo nala upgrade'
+  alias nuppy='echo;sudo nala upgrade' && \
+  alias canhaz='echo;sudo nala install'
 
 # Enable aliases to be sudo’ed
 type -P sudo > /dev/null \
