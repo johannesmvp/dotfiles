@@ -3,9 +3,27 @@ type -P df > /dev/null \
   && alias dfh='df -h'
 
 # du with human sorting
-type -P du > /dev/null \
-  && alias dusort='du -d1 -h | sort -h' \
-    && alias duasort='du -d1 -ah | sort -h'
+#type -P du > /dev/null \
+#  && alias dusort='du -d1 -h | sort -h' \
+#    && alias duasort='du -d1 -ah | sort -h'
+
+dusort ()
+{
+  if [[ "$#" -eq 0 ]] ; then
+    du -d1 -h | sort -h
+  else
+    du -d1 -h "$@" | sort -h
+  fi
+}
+
+duasort ()
+{
+  if [[ "$#" -eq 0 ]] ; then
+    du -d1 -ah | sort -h
+  else
+    du -d1 -ah "$@" | sort -h
+  fi
+}
 
 # Easier navigation: .., ..., ...., .....
 alias ..="cd .."
@@ -106,7 +124,7 @@ type -P apt > /dev/null \
 	&& alias uppy='echo;sudo apt update && sudo apt upgrade' \
 	&& alias uppyy='echo;sudo apt update && sudo apt -y upgrade'
 
-# nala needs sudo
+# nala
 type -P nala > /dev/null \
   && alias nala='echo;sudo nala' && \
   alias nuppy='echo;sudo nala upgrade'
