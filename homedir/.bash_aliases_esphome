@@ -22,7 +22,10 @@ espupd ()
   if [ "$#" -eq 0 ] ; then
 
     # No command line arguments given
+    echo
+    echo "espupd performs an OTA update on esphome devices using the IP address in the config file"
     echo "Usage: espupd file1 [file2] [file3]..."
+    echo
 
   else
 
