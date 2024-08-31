@@ -1,0 +1,53 @@
+alias espcomp='docker exec esphome esphome compile'
+alias espver='docker exec esphome esphome config'
+alias esprun='docker exec esphome esphome run --no-logs'
+
+# ####################################################### #
+# espupd                                                  #
+#                                                         #
+# This function retrieves IP address from esphome config  #
+# files, and uses them as the target for OTA update       #
+# (but only if exactly ONE address was found).            #
+#                                                         #
+# Usage: 'espupd file1 [file2 [file3] ... "               #
+#                                                         #
+# Wildcards can be used as well.                          #
+#   Examples:                                             #
+#     - 'espupd *.yaml'                                   #
+#     - 'espupd file1 *.yaml file2'                       # 
+# ####################################################### #
+
+espupd ()
+{
+  if [ "$#" -eq 0 ] ; then
+
+    # No command line arguments given
+    echo "Usage: espupd file1 [file2] [file3]..."
+
+  else
+
+    # Retrieve the IP addresses from the config files
+    for f in "$@"; do
+      IP=`grep -Po '(?<=use_address: |ip: )(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)' $f`
+
+      # Check if $IP is not empty (meaning no ip address was found)
+      if [[ $IP ]] ; then
+
+        # Check if exactly one IP address was found
+        if [ `echo $IP | grep " " | wc -l` -eq 0 ] ; then
+          echo "$f: Using [$IP] for host [`dig -x $IP +short`]"
+          esprun --device $IP $f
+
+        # More than one address found --> error
+        else
+          echo "$f: more than one IP found!"
+        fi
+
+      # No address found --> error
+      else
+        echo "$f: no IP found!"
+      fi
+
+    done
+  fi
+}
