@@ -38,7 +38,9 @@ espupd ()
 
         # Check if exactly one IP address was found
         if [ `echo $IP | grep " " | wc -l` -eq 0 ] ; then
+          echo;echo "##########"
           echo "$f: Using [$IP] for host [`dig -x $IP +short`]"
+          echo "##########";echo
           esprun --device $IP $f
 
         # More than one address found --> error
