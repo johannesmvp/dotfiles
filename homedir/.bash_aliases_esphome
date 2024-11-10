@@ -1,7 +1,7 @@
 alias espcomp='docker exec esphome esphome compile'
 alias espver='docker exec esphome esphome config'
 alias esprun='docker exec esphome esphome run --no-logs'
-alias espupl='docker exec esphome esphome upload --no-logs'
+alias espupl='docker exec esphome esphome upload'
 
 # ##################################################### #
 # esppush                                                 #
