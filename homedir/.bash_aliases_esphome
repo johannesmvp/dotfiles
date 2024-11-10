@@ -1,6 +1,62 @@
 alias espcomp='docker exec esphome esphome compile'
 alias espver='docker exec esphome esphome config'
 alias esprun='docker exec esphome esphome run --no-logs'
+alias espupl='docker exec esphome esphome upload --no-logs'
+
+# ##################################################### #
+# esppush                                                 #
+#                                                         #
+# This function retrieves IP address from esphome config  #
+# files, and uses them as the target for OTA update       #
+# (but only if exactly ONE address was found).            #
+#                                                         #
+# Usage: 'esppush file1 [file2 [file3] ... "              #
+#                                                         #
+# Wildcards can be used as well.                          #
+#   Examples:                                             #
+#     - 'esppush *.yaml'                                  #
+#     - 'esppush file1 *.yaml file2'                      # 
+# ####################################################### #
+
+esppush ()
+{
+  if [ "$#" -eq 0 ] ; then
+
+    # No command line arguments given
+    echo
+    echo "esppush performs an OTA update on esphome devices using the IP address in the config file"
+    echo "Usage: esppush file1 [file2] [file3]..."
+    echo
+
+  else
+
+    # Retrieve the IP addresses from the config files
+    for f in "$@"; do
+      IP=`grep -Po '(?<=use_address: |ip: )(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)' $f`
+
+      # Check if $IP is not empty (meaning no ip address was found)
+      if [[ $IP ]] ; then
+
+        # Check if exactly one IP address was found
+        if [ `echo $IP | grep " " | wc -l` -eq 0 ] ; then
+          echo;echo "##########"
+          echo "$f: Using [$IP] for host [`dig -x $IP +short`]"
+          echo "##########";echo
+          espupl --device $IP $f
+
+        # More than one address found --> error
+        else
+          echo "$f: more than one IP found!"
+        fi
+
+      # No address found --> error
+      else
+        echo "$f: no IP found!"
+      fi
+
+    done
+  fi
+}
 
 # ####################################################### #
 # espupd                                                  #
