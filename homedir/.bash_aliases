@@ -115,7 +115,7 @@ type -P apt-get > /dev/null \
 	&& alias icanhaz='echo;sudo apt-get update && sudo apt-get install' \
 	&& alias uppy='echo;sudo apt-get update && sudo apt-get upgrade' \
 	&& alias uppyy='echo;sudo apt-get update && sudo apt-get -y upgrade' \
-  && alias nuppy='uppy'
+  && alias nuppy='echo "sudo apt-get update && sudo apt-get upgrade" ; uppy'
 
 # apt # overwrite apt-get aliases if apt exists
 type -P apt > /dev/null \
@@ -123,12 +123,12 @@ type -P apt > /dev/null \
 	&& alias canhaz='echo;sudo apt install' \
 	&& alias uppy='echo;sudo apt update && sudo apt upgrade' \
 	&& alias uppyy='echo;sudo apt update && sudo apt -y upgrade' \
-  && alias nuppy='uppy'
+  && alias nuppy='echo "sudo apt update && sudo apt upgrade" ; uppy'
 
 # nala
 type -P nala > /dev/null \
   && alias nala='echo;sudo nala' && \
-  alias nuppy='echo;sudo nala upgrade' && \
+  alias nuppy='echo "sudo nala install" ; echo ; sudo nala upgrade' && \
   alias canhaz='echo;sudo nala install'
 
 # Enable aliases to be sudo’ed
