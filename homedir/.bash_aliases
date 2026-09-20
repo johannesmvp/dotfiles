@@ -127,9 +127,9 @@ type -P apt > /dev/null \
 
 # nala
 type -P nala > /dev/null \
-  && alias nala='echo;sudo nala' && \
-  alias nuppy='echo "sudo nala install" ; echo ; sudo nala upgrade' && \
-  alias canhaz='echo;sudo nala install'
+  && alias nala='echo;sudo nala' \
+  && alias nuppy='echo "sudo nala upgrade" ; echo ; sudo nala upgrade' \
+  && alias canhaz='echo;sudo nala install'
 
 # Enable aliases to be sudo’ed
 type -P sudo > /dev/null \
@@ -149,7 +149,8 @@ type -P screen > /dev/null \
 	&& alias descreen='screen -dmS' \
 	&& alias sc="screen -S" \
 	&& alias sl="screen -ls" \
-	&& alias sr="screen -r"
+	&& alias sr="screen -r" \
+  && alias sR="screen -R"
 
 # Recursively delete `.DS_Store` and/or `Thumbs.db` files
 alias cleanup="find . -type f \( -name '*.DS_Store' -or -name 'Thumbs.db' \) -ls -delete"
