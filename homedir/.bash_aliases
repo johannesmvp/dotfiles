@@ -114,14 +114,16 @@ type -P apt-get > /dev/null \
 	&& alias canhaz='echo;sudo apt-get install' \
 	&& alias icanhaz='echo;sudo apt-get update && sudo apt-get install' \
 	&& alias uppy='echo;sudo apt-get update && sudo apt-get upgrade' \
-	&& alias uppyy='echo;sudo apt-get update && sudo apt-get -y upgrade'
+	&& alias uppyy='echo;sudo apt-get update && sudo apt-get -y upgrade' \
+  && alias nuppy='uppy'
 
 # apt # overwrite apt-get aliases if apt exists
 type -P apt > /dev/null \
   && alias apt='echo;sudo apt' \
 	&& alias canhaz='echo;sudo apt install' \
 	&& alias uppy='echo;sudo apt update && sudo apt upgrade' \
-	&& alias uppyy='echo;sudo apt update && sudo apt -y upgrade'
+	&& alias uppyy='echo;sudo apt update && sudo apt -y upgrade' \
+  && alias nuppy='uppy'
 
 # nala
 type -P nala > /dev/null \
